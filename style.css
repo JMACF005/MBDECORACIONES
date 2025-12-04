@@ -1,165 +1,146 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #23272E; /* Fondo oscuro */
-    color: #F8F8F2;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
     padding: 20px;
     margin: 0;
 }
 
 #app-container {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-/* --- Encabezado y Título --- */
-
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #4a90e2;
+    font-size: 2.2em;
+    border-bottom: 2px solid #2e2e4a;
     padding-bottom: 10px;
-    border-bottom: 1px solid #3A4049;
 }
 
-.main-title {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #F8F8F2;
-    margin: 0;
+header p {
+    color: #cccccc;
 }
-
-.duration-total {
-    font-size: 1.2em;
-    font-weight: 400;
-    color: #BD93F9; /* Púrpura */
-    margin: 0;
-}
-
-/* --- Layout de Dos Columnas --- */
-
-#main-content {
-    display: flex;
-    gap: 20px;
-}
-
-#left-panel {
-    width: 380px; /* Ancho fijo para la información */
-    flex-shrink: 0;
-    background-color: #282C34;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-#right-panel {
-    flex-grow: 1;
-    overflow-x: auto; /* Permite el scroll horizontal en el gráfico */
-}
-
-/* --- Leyenda --- */
 
 #legend-container {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #3A4049;
-    margin-bottom: 20px;
-}
-
-.legend-section h3 {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #66D9EF; /* Cian */
-    margin-top: 15px;
-    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2e2e4a;
+    border-radius: 8px;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     font-size: 0.9em;
-    padding: 5px 0;
 }
 
 .legend-color {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    margin-right: 10px;
-    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    margin-right: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Información de Tareas (Columna Izquierda) --- */
+/* --- Gantt Styles --- */
 
-.task-info-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #3A404950;
-    font-size: 0.9em;
-}
-
-.task-info-item:last-child {
-    border-bottom: none;
-}
-
-.task-info-item span:first-child {
-    font-weight: 500;
-}
-
-.task-info-item span:last-child {
-    color: #BD93F9;
-    font-size: 0.8em;
-}
-
-/* --- Gráfico de Gantt (Columna Derecha) --- */
-
-#gantt-chart {
-    min-width: 1000px; /* Ancho mínimo para forzar el scroll */
-    background-color: #282C34;
+#gantt-container {
+    overflow-x: auto;
+    border: 1px solid #3e3e6f;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #2e2e4a;
+}
+
+#timeline-header, .task-row {
+    display: flex;
+    min-width: 1200px;
+    border-bottom: 1px solid #3e3e6f;
 }
 
 #timeline-header {
-    height: 30px;
-    display: flex;
+    background-color: #1a1a2e;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.task-info, .header-info {
+    width: 300px;
+    flex-shrink: 0;
+    padding: 0 15px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.task-info {
+    font-weight: normal;
+    font-size: 0.9em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 1px solid #3e3e6f;
+}
+
+.timeline, .timeline-scale {
+    flex-grow: 1;
     position: relative;
-    border-bottom: 1px solid #3A4049;
-    padding: 5px 0;
+}
+
+.timeline-scale {
+    height: 20px;
+    border-radius: 4px;
+    background-color: #3e3e6f50;
+    margin-right: 15px;
 }
 
 .day-marker {
     position: absolute;
     top: 0;
     height: 100%;
-    border-left: 1px solid #3A4049;
+    border-left: 1px dashed #ffffff30;
 }
 
 .day-label {
     position: absolute;
     top: -20px;
     font-size: 0.7em;
-    color: #999999;
+    color: #cccccc;
     transform: translateX(-50%);
-}
-
-.task-row-bar {
-    position: relative;
-    height: 40px; 
-    padding: 5px 0;
-    border-bottom: 1px solid #3A404950;
 }
 
 .task-bar {
     position: absolute;
     top: 5px;
     height: 30px;
-    border-radius: 4px;
-    opacity: 0.9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    transition: opacity 0.2s;
+    border-radius: 6px;
+    opacity: 0.85;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
 }
 
 .task-bar:hover {
     opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Alternating row colors for clarity */
+.task-row:nth-child(even) {
+    background-color: #3e3e6f30;
+}
+.task-row:nth-child(odd) {
+    background-color: #1a1a2e;
 }
