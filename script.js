@@ -1,117 +1,83 @@
 const projectData = [
-    // FASE: Definición (Azul - #3b82f6)
-    { id: 1, name: "Definición de Idea Principal", startDay: 1, endDay: 7, phase: "Planificación y Definición", color: "#3b82f6" },
-    { id: 2, name: "Redacción y Mercado Objetivo", startDay: 8, endDay: 9, phase: "Planificación y Definición", color: "#3b82f6" },
-    { id: 3, name: "Antecedentes y Justificación", startDay: 10, endDay: 14, phase: "Planificación y Definición", color: "#3b82f6" },
+    // Definición (Azul)
+    { id: 1, name: "Definición de Idea Principal", startDay: 1, endDay: 7, phase: "Definición", color: "#3b82f6" },
+    { id: 2, name: "Redacción y Mercado Objetivo", startDay: 8, endDay: 9, phase: "Definición", color: "#3b82f6" },
+    { id: 3, name: "Antecedentes y Justificación", startDay: 10, endDay: 14, phase: "Definición", color: "#3b82f6" },
 
-    // FASE: Factibilidad y Organización (Verde - #22c55e)
-    { id: 4, name: "Estudio de Factibilidad Técnica", startDay: 15, endDay: 19, phase: "Organización y Factibilidad", color: "#22c55e" },
-    { id: 5, name: "Estudio de Factibilidad Económica", startDay: 20, endDay: 24, phase: "Organización y Factibilidad", color: "#22c55e" },
-    { id: 6, name: "Estructuración del Organigrama", startDay: 25, endDay: 29, phase: "Organización y Factibilidad", color: "#22c55e" },
-    { id: 7, name: "Misión, Visión y Valores", startDay: 30, endDay: 35, phase: "Organización y Factibilidad", color: "#22c55e" },
+    // Factibilidad y Organización (Verde)
+    { id: 4, name: "Estudio de Factibilidad Técnica", startDay: 15, endDay: 19, phase: "Factibilidad", color: "#22c55e" },
+    { id: 5, name: "Estudio de Factibilidad Económica", startDay: 20, endDay: 24, phase: "Factibilidad", color: "#22c55e" },
+    { id: 6, name: "Misión, Visión y Valores", startDay: 25, endDay: 29, phase: "Organización", color: "#22c55e" },
+    { id: 7, name: "Estructuración del Organigrama", startDay: 30, endDay: 35, phase: "Organización", color: "#22c55e" },
 
+    // Localización y Presupuesto (Púrpura y Naranja)
+    { id: 8, name: "Localización Física del Proyecto", startDay: 40, endDay: 44, phase: "Terreno", color: "#a855f7" },
+    { id: 9, name: "Evaluación del Terreno (70 m²)", startDay: 45, endDay: 47, phase: "Terreno", color: "#a855f7" },
+    { id: 10, name: "Presupuesto de Adquisición y Construcción", startDay: 48, endDay: 49, phase: "Presupuesto", color: "#f97316" },
+    { id: 11, name: "Presupuesto Completo del Local", startDay: 50, endDay: 54, phase: "Presupuesto", color: "#f97316" },
+    { id: 12, name: "Presupuesto de Herramientas y Vehículos", startDay: 55, endDay: 55, phase: "Presupuesto", color: "#f97316" },
 
-    // FASE: Terreno (Púrpura - #a855f7)
-    { id: 8, name: "Localización Física del Proyecto", startDay: 36, endDay: 40, phase: "Terreno", color: "#a855f7" },
-    { id: 9, name: "Evaluación del Terreno (70 m²)", startDay: 41, endDay: 43, phase: "Terreno", color: "#a855f7" },
-    
-    // FASE: Presupuesto (Naranja - #f97316)
-    { id: 10, name: "Presupuesto de Adquisición y Construcción", startDay: 44, endDay: 45, phase: "Presupuesto", color: "#f97316" },
-    { id: 11, name: "Presupuesto Completo del Local", startDay: 46, endDay: 50, phase: "Presupuesto", color: "#f97316" },
-    { id: 12, name: "Presupuesto de Herramientas y Vehículos", startDay: 51, endDay: 51, phase: "Presupuesto", color: "#f97316" },
-
-    // FASE: Revisión y Cierre (Rojo - #ef4444)
-    { id: 13, name: "Revisión y Organización de Cálculos", startDay: 52, endDay: 53, phase: "Monitoreo y Revisión", color: "#ef4444" },
-    { id: 14, name: "Revisión Final de Presupuesto", startDay: 54, endDay: 54, phase: "Monitoreo y Revisión", color: "#ef4444" },
-    { id: 15, name: "Creación Monitoreo y Evaluación", startDay: 55, endDay: 56, phase: "Monitoreo y Revisión", color: "#ef4444" },
-    { id: 16, name: "Tabla de Indicadores", startDay: 57, endDay: 58, phase: "Monitoreo y Revisión", color: "#ef4444" },
-    { id: 17, name: "Redacción Resultados Esperados", startDay: 59, endDay: 60, phase: "Organización y Revisión (Auditoría)", color: "#ef4444" },
-    { id: 18, name: "Organización y Auditoría", startDay: 61, endDay: 68, phase: "Organización y Revisión (Auditoría)", color: "#ef4444" },
+    // Revisión y Cierre (Rojo)
+    { id: 13, name: "Revisión y Organización de Cálculos", startDay: 56, endDay: 57, phase: "Revisión", color: "#ef4444" },
+    { id: 14, name: "Revisión Final de Presupuesto", startDay: 58, endDay: 58, phase: "Revisión", color: "#ef4444" },
+    { id: 15, name: "Creación Monitoreo y Evaluación", startDay: 59, endDay: 60, phase: "Monitoreo", color: "#ef4444" },
+    { id: 16, name: "Tabla de Indicadores", startDay: 61, endDay: 62, phase: "Monitoreo", color: "#ef4444" },
+    { id: 17, name: "Redacción Resultados Esperados", startDay: 63, endDay: 64, phase: "Cierre", color: "#ef4444" },
+    { id: 18, name: "Organización y Auditoría", startDay: 65, endDay: 68, phase: "Cierre", color: "#ef4444" },
 ];
 
 const totalDays = 68;
-const phasesMap = projectData.reduce((acc, task) => {
-    acc[task.phase] = task.color;
-    return acc;
-}, {});
 
-function renderLegendAndTasksInfo() {
-    const legendContainer = document.getElementById('legend-container');
-    const tasksInfoList = document.getElementById('tasks-info-list');
-    
-    legendContainer.innerHTML = '<h3>Legend</h3>';
-    tasksInfoList.innerHTML = '';
-
-    const phases = {};
-    projectData.forEach(task => {
-        if (!phases[task.phase]) {
-            phases[task.phase] = { color: task.color, tasks: [] };
+function renderLegend() {
+    const phases = projectData.reduce((acc, task) => {
+        if (!acc[task.phase]) {
+            acc[task.phase] = { color: task.color, count: 0 };
         }
-        phases[task.phase].tasks.push(task);
-    });
+        acc[task.phase].count++;
+        return acc;
+    }, {});
 
-    let currentTaskNumber = 1;
-    for (const phaseName in phases) {
-        // 1. Renderizar Leyenda (Sección superior)
-        const legendItem = document.createElement('div');
-        legendItem.className = 'legend-item';
-        legendItem.innerHTML = `
-            <span class="legend-color" style="background-color: ${phases[phaseName].color};"></span>
-            <span>${phaseName}</span>
+    const container = document.getElementById('legend-container');
+    container.innerHTML = '<h2>Leyenda de Fases:</h2>';
+
+    for (const phase in phases) {
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+            <span class="legend-color" style="background-color: ${phases[phase].color};"></span>
+            <span>${phase} (${phases[phase].count} tareas)</span>
         `;
-        legendContainer.appendChild(legendItem);
-
-        // 2. Renderizar Títulos de Fase y Tareas (Sección inferior)
-        const phaseTitle = document.createElement('h3');
-        phaseTitle.className = 'legend-section';
-        phaseTitle.textContent = phaseName;
-        tasksInfoList.appendChild(phaseTitle);
-
-        phases[phaseName].tasks.forEach(task => {
-            const duration = task.endDay - task.startDay + 1;
-            const item = document.createElement('div');
-            item.className = 'task-info-item';
-            item.innerHTML = `
-                <span>${currentTaskNumber++}. ${task.name}</span>
-                <span>Días: ${duration}</span>
-            `;
-            tasksInfoList.appendChild(item);
-        });
+        container.appendChild(item);
     }
 }
 
 function renderTimelineHeader() {
     const header = document.getElementById('timeline-header');
-    header.innerHTML = '';
-    
-    // Marcadores para 1, 2, 3... y luego cada 5 (o ajustado)
-    const markersToShow = [1, 2, 3, 4];
-    for(let d = 5; d <= totalDays; d += 5) {
-        markersToShow.push(d);
-    }
-    if (!markersToShow.includes(totalDays)) markersToShow.push(totalDays);
+    const interval = Math.max(1, Math.ceil(totalDays / 15));
 
-    markersToShow.forEach(day => {
+    header.innerHTML = `
+        <div class="header-info">Actividad / Día</div>
+        <div class="timeline-scale"></div>
+    `;
+
+    const scale = header.querySelector('.timeline-scale');
+
+    for (let day = 1; day <= totalDays; day++) {
         const percentage = ((day - 1) / totalDays) * 100;
-        
-        const marker = document.createElement('div');
-        marker.className = 'day-marker';
-        marker.style.left = `${percentage}%`;
-        
-        // Etiqueta de día
-        const label = document.createElement('span');
-        label.className = 'day-label';
-        label.textContent = day;
-        label.style.left = `${percentage}%`;
 
-        header.appendChild(marker);
-        header.appendChild(label);
-    });
+        if (day === 1 || day === totalDays || day % interval === 0) {
+            const marker = document.createElement('div');
+            marker.className = 'day-marker';
+            marker.style.left = `${percentage}%`;
+            marker.innerHTML = `<span class="day-label" style="left: ${percentage < 10 ? '0' : '50%'};">Día ${day}</span>`;
+            scale.appendChild(marker);
+        }
+    }
 }
 
-function renderTasksBars() {
-    const tasksBarsList = document.getElementById('tasks-bars-list');
-    tasksBarsList.innerHTML = '';
+function renderTasks() {
+    const tasksList = document.getElementById('tasks-list');
+    tasksList.innerHTML = '';
 
     projectData.forEach((task) => {
         const duration = task.endDay - task.startDay + 1;
@@ -119,23 +85,25 @@ function renderTasksBars() {
         const widthPercentage = (duration / totalDays) * 100;
 
         const row = document.createElement('div');
-        row.className = 'task-row-bar';
+        row.className = 'task-row';
         row.innerHTML = `
-            <div 
-                class="task-bar" 
-                style="left: ${startPercentage}%; width: ${widthPercentage}%; background-color: ${task.color};"
-                title="${task.name} | Duración: ${duration} días | Fase: ${task.phase} "
-            >
-                
+            <div class="task-info">${task.name} <br> <span style="color: ${task.color}; font-size: 0.8em; font-weight: bold;">[${task.phase}]</span></div>
+            <div class="timeline">
+                <div 
+                    class="task-bar" 
+                    style="left: ${startPercentage}%; width: ${widthPercentage}%; background-color: ${task.color};"
+                    title="${task.name} (Días ${task.startDay} - ${task.endDay})"
+                >
+                    ${duration} días
+                </div>
             </div>
         `;
-        tasksBarsList.appendChild(row);
+        tasksList.appendChild(row);
     });
 }
 
-// Ejecutar funciones al cargar
 document.addEventListener('DOMContentLoaded', () => {
-    renderLegendAndTasksInfo();
+    renderLegend();
     renderTimelineHeader();
-    renderTasksBars();
+    renderTasks();
 });
