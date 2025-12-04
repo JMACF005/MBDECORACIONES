@@ -9,14 +9,22 @@
 <body>
     <div id="app-container">
         <header>
-            <h1>📊 Cronograma de Gantt - Proyecto MBDECORACIONES</h1>
-            <p>Organización y Desarrollo de una Empresa de Servicios de Construcción</p>
-            <div id="legend-container"></div>
+            <h1 class="main-title">Cronograma de Gantt - Proyecto de Construcción</h1>
+            <h2 class="duration-total">Duración Total: 68 Días</h2>
         </header>
+        
+        <div id="main-content">
+            <div id="left-panel">
+                <div id="legend-container"></div>
+                <div id="tasks-info-list"></div>
+            </div>
 
-        <div id="gantt-container">
-            <div id="timeline-header"></div>
-            <div id="tasks-list"></div>
+            <div id="right-panel">
+                <div id="gantt-chart">
+                    <div id="timeline-header"></div>
+                    <div id="tasks-bars-list"></div>
+                </div>
+            </div>
         </div>
     </div>
     
